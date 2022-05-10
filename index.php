@@ -1,24 +1,42 @@
 <?php
-  $arr1=array('c1' => 'Red', 'c2' => 'Green', 'c3' => 'White', 'c4' => 'Black');
-  $arr2=array('c4','c2');
+$arr1=array(1,2,3,4,5);
+$del_val=4;
+
+
+function del($var){
+        global $del_val;
+         global $arr1;
+        if($var==$del_val){
+            
+            $index=array_search($var,$arr1);
+            
+           array_splice($arr1,$index,1);
+           
+
+         }
+         
+
+
+}
+
+ 
+
+
+
+ array_filter($arr1,"del");
+
+ echo("Output : <br>");
+ for($i=0;$i<count($arr1);$i++){
+     echo("$arr1[$i] ");
+ 
+ }
+
   
-  foreach($arr1 as $key => $val){
-      if((array_search($key, $arr2))===FALSE){
-          
-          $res[$key]=$val;
-
-      }
-  }
-
-
-   echo("Output : <br>");
-   foreach($res as $key => $val){
-       echo("$key :  $val <br>");
-   
-   }
    echo ("<br><br>");
 
    
+
+  
 
 
 
