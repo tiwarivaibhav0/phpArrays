@@ -1,21 +1,31 @@
 <?php
-  $arr=array(1,2,3,4,5);
-  $pos=3;
-  $insert=9;
+  $arr=array(78, 60, 62, 68, 71, 68, 73, 85, 66, 64, 76, 63, 75, 76, 73, 68, 62, 73, 72, 65, 74, 62, 62, 65, 64, 68, 73, 75, 79, 73);
+  
+  
 
 
-   echo("Original Array");
+   echo("Recorded Temperatures");
    for($i=0;$i<count($arr);$i++)
         echo("$arr[$i] ");
-       echo ("<br>");
+        echo ("<br><br>");
 
    
-  array_splice( $arr, $pos, 0, $insert); 
+   $avg =array_sum($arr)/count($arr);
+        echo("Average Temperature is: $avg");
+      
+        echo ("<br><br>");
 
-  echo("Array after Insertion ");
-  for($i=0;$i<count($arr);$i++)
-       echo("$arr[$i] ");
-      echo ("<br>");
+   sort($arr);
+        echo("5 Lowest Temperatures");
+        for($i=0;$i<5;$i++)
+        echo("$arr[$i] ");
+        echo ("<br><br>");
+    
+        rsort($arr);
+        echo("5 Highest Temperatures");
+        for($i=0;$i<5;$i++)
+        echo("$arr[$i] ");
+        echo ("<br><br>");
 
 
 
